@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+#include <sstream>
+
+using namespace std;
+
+int main(){
+  int N, tam, cont[2], cas = 0;
+  string line, sexo;
+  
+  while (cin >> N){
+  cas++;
+  getchar();
+  getline(cin, line);
+  
+  stringstream ss(line);
+  
+  cont[0] = cont[1] = 0;
+  while(ss >> tam >> sexo){
+
+    if (tam == N){
+      if (sexo == "F") cont[0]++;
+      else cont[1]++;
+    }
+  }
+  
+  printf("Caso %i:\n", cas);
+  printf("Pares iguais: %i\n", cont[0] + cont[1]);
+  printf("F:%i\n", cont[0]);
+  printf("M:%i\n", cont[1]);
+  }
+  return 0;
+}
